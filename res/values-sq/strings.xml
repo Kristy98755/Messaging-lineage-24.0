@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Copyright (C) 2015 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name" msgid="3062916848713424329">"Mesazhet"</string>
+    <string name="share_intent_label" msgid="6920483598866144717">"Mesazhet"</string>
+    <string name="share_intent_activity_label" msgid="2939454246983196756">"Përzgjidh bisedën"</string>
+    <string name="action_settings" msgid="1329008122345201684">"Cilësimet"</string>
+    <string name="sendButtonContentDescription" msgid="8422114979691093956">"Dërgo mesazh"</string>
+    <string name="attachMediaButtonContentDescription" msgid="2758624209216276682">"Shto një bashkëngjitje"</string>
+    <string name="next_with_arrow" msgid="2840729397885031655">"Përpara &gt;"</string>
+    <string name="next" msgid="4496962051601713843">"Përpara"</string>
+    <string name="exit" msgid="1905187380359981199">"Dil"</string>
+    <string name="settings_with_arrow" msgid="8534633224579301342">"Cilësimet &gt;"</string>
+    <string name="settings" msgid="1045695083932447399">"Cilësimet"</string>
+    <string name="required_permissions_promo" msgid="3898014894175251590">"Mesazhet kanë nevojë për leje për në SMS, Telefon dhe Kontakte."</string>
+    <string name="enable_permission_procedure" msgid="2778471831376319587">"Lejet mund t\'i ndryshosh te Cilësimet, Aplikacionet, Mesazhet, Lejet."</string>
+    <string name="enable_permission_procedure_description" msgid="8672121020793945630">"Lejet mund t\'i ndryshosh te Cilësimet, Aplikacionet, Mesazhet, Lejet."</string>
+    <string name="contact_picker_frequents_tab_title" msgid="7157326165824706883">"Të shpeshta"</string>
+    <string name="contact_picker_all_contacts_tab_title" msgid="1424746082040243161">"Të gjitha kontaktet"</string>
+    <string name="contact_list_send_to_text" msgid="3167455944684758290">"Dërgoje te <xliff:g id="DESTINATION">%s</xliff:g>"</string>
+    <string name="mediapicker_cameraChooserDescription" msgid="8498255650058981250">"Regjistro fotografi ose video"</string>
+    <string name="mediapicker_galleryChooserDescription" msgid="1227741581156455777">"Zgjidh imazhe nga kjo pajisje"</string>
+    <string name="mediapicker_audioChooserDescription" msgid="3660616501040372452">"Regjistro audio"</string>
+    <string name="mediapicker_gallery_title" msgid="3169528536727885763">"Zgjidh foto"</string>
+    <string name="mediapicker_gallery_item_selected_content_description" msgid="2569545441879514283">"Artikulli \"media\" u zgjodh."</string>
+    <string name="mediapicker_gallery_item_unselected_content_description" msgid="40021674722525910">"Artikulli \"media\" nuk u zgjodh."</string>
+    <string name="mediapicker_audio_title" msgid="5455016591560739789">"Regjistro audio"</string>
+    <string name="action_share" msgid="2143483844803153871">"Shpërnda"</string>
+    <string name="posted_just_now" msgid="6632467048088811568">"Pikërisht tani"</string>
+    <string name="posted_now" msgid="867560789350406701">"Tani"</string>
+    <plurals name="num_minutes_ago" formatted="false" msgid="4085627474543076735">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> minuta</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> minutë</item>
+    </plurals>
+    <plurals name="num_hours_ago" formatted="false" msgid="8010868301590914325">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> orë</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> orë</item>
+    </plurals>
+    <plurals name="num_days_ago" formatted="false" msgid="8753803762044567843">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> ditë</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> ditë</item>
+    </plurals>
+    <string name="class_0_message_activity" msgid="4603850264073169854">"Mesazh i kategorisë 0"</string>
+    <string name="save" msgid="5081141452059463572">"Ruaj"</string>
+    <string name="enter_phone_number_title" msgid="7263355879949248448">"Konfirmo numrin tënd të telefonit"</string>
+    <string name="enter_phone_number_text" msgid="4539767473801195966">"Ky hap që kryhet vetëm një herë do të garantojë që Mesazhet t\'i dorëzojë siç duhet mesazhet e tua në grup."</string>
+    <string name="enter_phone_number_hint" msgid="6242965213882272822">"Numri i telefonit"</string>
+    <string name="incoming_text_sender_content_description" msgid="2481078288502342745">"<xliff:g id="SENDER">%s</xliff:g> tha"</string>
+    <string name="outgoing_text_sender_content_description" msgid="3492116976256510272">"Ti the"</string>
+    <string name="incoming_sender_content_description" msgid="7512757244515303701">"Mesazh nga <xliff:g id="SENDER">%s</xliff:g>"</string>
+    <string name="outgoing_sender_content_description" msgid="5983163141994434778">"Dërgove një mesazh"</string>
+    <string name="message_status_sending" msgid="3306260780518886107">"Po dërgon..."</string>
+    <string name="message_status_send_failed" msgid="5443627648028194631">"Nuk u dërgua. Prek për të provuar sërish."</string>
+    <string name="message_status_send_retrying" msgid="650840088043267981">"Nuk u dërgua. Po provon sërish…"</string>
+    <string name="message_status_resend" msgid="7718458416521355708">"Dërgo sërish ose fshi"</string>
+    <string name="message_status_send_failed_emergency_number" msgid="1738854184297159948">"Bëj një telefonatë me zë drejt shërbimeve të urgjencës. Mesazhi yt me tekst nuk arriti të dërgohej këtë herë."</string>
+    <string name="message_title_manual_download" msgid="2761223322277801061">"Mesazh i ri MMS-je për të shkarkuar"</string>
+    <string name="message_title_downloading" msgid="6418481644146460124">"Mesazh i ri MMS-je"</string>
+    <string name="message_title_download_failed" msgid="3867223594671090459">"Nuk arriti ta shkarkonte"</string>
+    <string name="message_status_download_failed" msgid="7298035414448355842">"Prek për të provuar sërish"</string>
+    <string name="message_status_download" msgid="6527275493954932656">"Prek për të shkarkuar"</string>
+    <string name="message_status_download_action" msgid="285219832844160">"Shkarko ose fshi"</string>
+    <string name="message_status_downloading" msgid="7159807805159805428">"Po shkarkon…"</string>
+    <string name="message_status_download_error" msgid="6957738686287397519">"Mesazhi skadoi ose nuk mund të përdoret"</string>
+    <string name="mms_info" msgid="3402311750134118165">"madhësia: <xliff:g id="MESSAGESIZE">%1$s</xliff:g>, skadimi: <xliff:g id="MESSAGEEXPIRE">%2$s</xliff:g>"</string>
+    <string name="unknown_sender" msgid="504272434917395677">"Dërgues i panjohur"</string>
+    <string name="delivered_status_content_description" msgid="3433965196058436991">"Dorëzuar"</string>
+    <string name="notification_send_failures_line1_singular" msgid="6783835440207655217">"Mesazhi nuk është dërguar"</string>
+    <string name="notification_send_failures_line1_plural" msgid="7228944748028969272">"Disa mesazhe nuk janë dërguar te Mesazhet"</string>
+    <plurals name="notification_send_failures" formatted="false" msgid="6938919932879650691">
+      <item quantity="other"><xliff:g id="MESSAGES_1">%d</xliff:g> mesazhe në <xliff:g id="CONVERSATIONS">%d</xliff:g> bashkëbisedime</item>
+      <item quantity="one"><xliff:g id="MESSAGES_0">%d</xliff:g> mesazhe në një bashkëbisedim</item>
+    </plurals>
+    <string name="notification_download_failures_line1_singular" msgid="4424772073720626885">"Mesazhi nuk u shkarkua"</string>
+    <string name="notification_download_failures_line1_plural" msgid="1697982467160426345">"Disa mesazhe nuk janë shkarkuar te Mesazhet"</string>
+    <plurals name="notification_download_failures" formatted="false" msgid="5341490525457911398">
+      <item quantity="other"><xliff:g id="MESSAGES_1">%d</xliff:g> mesazhe në <xliff:g id="CONVERSATIONS">%d</xliff:g> bashkëbisedime</item>
+      <item quantity="one"><xliff:g id="MESSAGES_0">%d</xliff:g> mesazhe në një bashkëbisedim</item>
+    </plurals>
+    <string name="notification_emergency_send_failure_line1" msgid="6311715277789488996">"Mesazhi për <xliff:g id="NUMBER">%1$s</xliff:g> nuk u dërgua"</string>
+    <string name="notification_emergency_send_failure_line2" msgid="6461481033351036996">"Bëj një telefonatë me zë drejt shërbimeve të urgjencës. Mesazhi yt me tekst për <xliff:g id="NUMBER">%1$s</xliff:g> nuk arriti të dërgohej këtë herë."</string>
+    <plurals name="notification_new_messages" formatted="false" msgid="610594317958128842">
+      <item quantity="other"><xliff:g id="MESSAGES">%d</xliff:g> mesazhe të reja</item>
+      <item quantity="one">Mesazh i ri</item>
+    </plurals>
+    <string name="back" msgid="1477626055115561645">"Prapa"</string>
+    <string name="action_menu_show_archived" msgid="1628518043533374868">"Arkivuar"</string>
+    <string name="action_delete" msgid="4076795795307486019">"Fshi"</string>
+    <string name="action_archive" msgid="5437034800324083170">"Arkivo"</string>
+    <string name="action_unarchive" msgid="139681611159869493">"Hiq nga arkiva"</string>
+    <string name="action_add_contact" msgid="8248615862739848672">"Shto kontakt"</string>
+    <string name="action_download" msgid="7786338136368564146">"Shkarko"</string>
+    <string name="action_send" msgid="377635240181672039">"Dërgo"</string>
+    <string name="action_delete_message" msgid="2728883749416365507">"Fshi"</string>
+    <string name="delete_message_confirmation_dialog_title" msgid="4723834210275712001">"Të fshihet ky mesazh?"</string>
+    <string name="delete_message_confirmation_dialog_text" msgid="3952533622691031375">"Ky veprim nuk mund të zhbëhet."</string>
+    <string name="delete_message_confirmation_button" msgid="3888584614972573382">"Fshi"</string>
+    <plurals name="delete_conversations_confirmation_dialog_title" formatted="false" msgid="2285567882353326800">
+      <item quantity="other">Fshiji këto biseda?</item>
+      <item quantity="one">Fshije këtë bisedë?</item>
+    </plurals>
+    <string name="delete_conversation_confirmation_button" msgid="744574085809600863">"Fshi"</string>
+    <string name="delete_conversation_decline_button" msgid="5470021965641900456">"Anulo"</string>
+    <string name="recipient_hint" msgid="1819710673158265515">"Për"</string>
+    <string name="attachment_more_items" msgid="2861573099241369958">"+<xliff:g id="COUNT">%d</xliff:g>"</string>
+    <string name="audio_recording_start_failed" msgid="4442450764642560851">"Nuk mund të regjistrojë audio. Provo sërish."</string>
+    <string name="audio_recording_replay_failed" msgid="3585760856463273828">"Nuk mund të luajë audio. Provo sërish."</string>
+    <string name="audio_recording_error" msgid="7762310055059024872">"Nuk arriti ta ruante audion. Provo sërish."</string>
+    <string name="audio_picker_hint_text" msgid="6986250080467111491">"Prek dhe mbaj shtypur"</string>
+    <string name="enumeration_comma" msgid="7032804261692931808">", "</string>
+    <string name="notification_separator" msgid="3472521786709813414">"  "</string>
+    <string name="notification_ticker_separator" msgid="2027929074008933906">": "</string>
+    <string name="notification_space_separator" msgid="9007689386066977972">"  "</string>
+    <string name="notification_picture" msgid="1176665337098921822">"Fotografi"</string>
+    <string name="notification_audio" msgid="5926581589398218150">"Klip audioje"</string>
+    <string name="notification_video" msgid="4331423498662606204">"Video"</string>
+    <string name="notification_vcard" msgid="7658061674440552878">"Kartë kontakti"</string>
+    <string name="notification_download_mms" msgid="6206807985355359528">"Shkarko"</string>
+    <string name="notification_reply_via_sms" msgid="6990127304684161722">"Përgjigju përmes SMS-së"</string>
+    <string name="notification_reply_via_mms" msgid="6706012871186064035">"Përgjigju përmes MMS-së"</string>
+    <string name="notification_reply_prompt" msgid="1836023392294480241">"Përgjigju"</string>
+    <plurals name="wearable_participant_count" formatted="false" msgid="3037889420270036143">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> pjesëmarrës</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> pjesëmarrës</item>
+    </plurals>
+    <string name="unknown_self_participant" msgid="3186565052350548852">"Unë"</string>
+    <string name="blocked_toast_message" msgid="7903364256385612569">"Kontakt i bllokuar dhe i arkivuar"</string>
+    <string name="unblocked_toast_message" msgid="4927617874263586622">"Kontakti u zhbllokua dhe arkivimi i tij u anulua"</string>
+    <string name="archived_toast_message" msgid="8109348891515322512">"<xliff:g id="COUNT">%d</xliff:g> të arkivuara"</string>
+    <string name="unarchived_toast_message" msgid="5010777423084203833">"<xliff:g id="COUNT">%d</xliff:g> të paarkivuara"</string>
+    <string name="toast_after_setting_default_sms_app_for_message_send" msgid="2767997591700713113">"Gjithçka gati. Prek sërish \"Dërgo\"."</string>
+    <string name="toast_after_setting_default_sms_app" msgid="2923745971897322476">"\"Mesazhet\" u caktua me sukses si aplikacioni me parazgjedhje i SMS-ve."</string>
+    <plurals name="attachment_preview_close_content_description" formatted="false" msgid="5631719319690969981">
+      <item quantity="other">Hiq bashkëngjitjet</item>
+      <item quantity="one">Hiq bashkëngjitjen</item>
+    </plurals>
+    <string name="audio_attachment_content_description" msgid="499334244765270108">"Bashkëngjitja audio"</string>
+    <string name="audio_play_content_description" msgid="4932509227281251607">"Luaj bashkëngjitjen në audio"</string>
+    <string name="audio_pause_content_description" msgid="7578169887065513701">"Pauzë"</string>
+    <string name="incoming_message_announcement" msgid="6369259405539452011">"Mesazh nga <xliff:g id="SENDER">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>."</string>
+    <string name="one_on_one_incoming_failed_message_prefix" msgid="6985644411445605747">"Mesazh i dështuar nga <xliff:g id="SENDER">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="one_on_one_incoming_successful_message_prefix" msgid="6190814597935995703">"Mesazh nga <xliff:g id="SENDER">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="one_on_one_outgoing_draft_message_prefix" msgid="8721053088385740646">"Mesazh i padërguar për <xliff:g id="CONTACT">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="one_on_one_outgoing_sending_message_prefix" msgid="3929653530203574220">"Po dërgon mesazh te <xliff:g id="CONTACT">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="one_on_one_outgoing_failed_message_prefix" msgid="7194065651879454314">"Mesazh i dështuar për <xliff:g id="CONTACT">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="one_on_one_outgoing_successful_message_prefix" msgid="7128492863867327814">"Mesazh për <xliff:g id="CONTACT">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="group_incoming_failed_message_prefix" msgid="7085805237707481779">"Mesazh i dështuar nga <xliff:g id="SENDER">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>.  Ora: <xliff:g id="TIME">%3$s</xliff:g>. <xliff:g id="GROUPINFO">%4$s</xliff:g>."</string>
+    <string name="group_incoming_successful_message_prefix" msgid="7248506967059447054">"Mesazh nga <xliff:g id="SENDER">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>. <xliff:g id="GROUPINFO">%4$s</xliff:g>."</string>
+    <string name="group_outgoing_draft_message_prefix" msgid="1655013812805454648">"Mesazh i padërguar për <xliff:g id="GROUP">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="group_outgoing_sending_message_prefix" msgid="7636874745414695556">"Po dërgon mesazh te <xliff:g id="GROUP">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="group_outgoing_failed_message_prefix" msgid="5059983340377901592">"Mesazh i dështuar për <xliff:g id="GROUP">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="group_outgoing_successful_message_prefix" msgid="1593702642852987920">"Mesazh për <xliff:g id="GROUP">%1$s</xliff:g>: <xliff:g id="MESSAGE">%2$s</xliff:g>. Ora: <xliff:g id="TIME">%3$s</xliff:g>."</string>
+    <string name="failed_message_content_description" msgid="7047161648867054936">"Mesazhi dështoi. Prek për ta provuar sërish."</string>
+    <string name="delete_subject_content_description" msgid="8910749398836396698">"Fshi subjektin"</string>
+    <string name="photo_view_activity_title" msgid="6556006393051918135">"Foto me mesazhe"</string>
+    <plurals name="photos_saved_to_album" formatted="false" msgid="7529478299745446838">
+      <item quantity="other"><xliff:g id="QUANTITY_2">%d</xliff:g> fotografi u ruajtën tek albumi \"<xliff:g id="ALBUMNAME_3">%s</xliff:g>\"</item>
+      <item quantity="one"><xliff:g id="QUANTITY_0">%d</xliff:g> fotografi u ruajt tek albumi \"<xliff:g id="ALBUMNAME_1">%s</xliff:g>\"</item>
+    </plurals>
+    <plurals name="videos_saved_to_album" formatted="false" msgid="6821121808257576788">
+      <item quantity="other"><xliff:g id="QUANTITY_2">%d</xliff:g> video u ruajtën tek albumi \"<xliff:g id="ALBUMNAME_3">%s</xliff:g>\"</item>
+      <item quantity="one"><xliff:g id="QUANTITY_0">%d</xliff:g> video u ruajt tek albumi \"<xliff:g id="ALBUMNAME_1">%s</xliff:g>\"</item>
+    </plurals>
+    <plurals name="attachments_saved_to_album" formatted="false" msgid="8407480699515308929">
+      <item quantity="other"><xliff:g id="QUANTITY_2">%d</xliff:g> bashkëngjitje u ruajtën tek albumi\"<xliff:g id="ALBUMNAME_3">%s</xliff:g>\"</item>
+      <item quantity="one"><xliff:g id="QUANTITY_0">%d</xliff:g> bashkëngjitje u ruajt tek albumi \"<xliff:g id="ALBUMNAME_1">%s</xliff:g>\"</item>
+    </plurals>
+    <plurals name="attachments_saved_to_downloads" formatted="false" msgid="1886864019411801995">
+      <item quantity="other"><xliff:g id="QUANTITY_1">%d</xliff:g> bashkëngjitje u ruajtën tek \"Shkarkimet\"</item>
+      <item quantity="one"><xliff:g id="QUANTITY_0">%d</xliff:g> bashkëngjitje u ruajt tek \"Shkarkimet\"</item>
+    </plurals>
+    <plurals name="attachments_saved" formatted="false" msgid="6925000482183379648">
+      <item quantity="other"><xliff:g id="QUANTITY_1">%d</xliff:g> bashkëngjitje u ruajtën</item>
+      <item quantity="one"><xliff:g id="QUANTITY_0">%d</xliff:g> bashkëngjitje u ruajt</item>
+    </plurals>
+    <plurals name="attachment_save_error" formatted="false" msgid="2068837227090109833">
+      <item quantity="other"><xliff:g id="QUANTITY_1">%d</xliff:g> bashkëngjitje nuk mund të ruheshin</item>
+      <item quantity="one"><xliff:g id="QUANTITY_0">%d</xliff:g> bashkëngjitje nuk mund të ruhej</item>
+    </plurals>
+    <string name="settings_activity_title" msgid="3380813834835334258">"Cilësimet"</string>
+    <string name="archived_activity_title" msgid="4738212324460451188">"Arkivuar"</string>
+    <string name="mms_messaging_category_pref_title" msgid="4816815152658525660">"MMS"</string>
+    <string name="advanced_category_pref_title" msgid="6411454224069259687">"Të përparuara"</string>
+    <string name="notifications_pref_title" msgid="4127288731844373795">"Njoftime"</string>
+    <string name="delivery_reports_pref_title" msgid="5115727259825309087">"Raportet e dorëzimit të SMS"</string>
+    <string name="delivery_reports_pref_summary" msgid="4272502420621500421">"Kërko një raport dorëzimi për çdo SMS që dërgon"</string>
+    <string name="auto_retrieve_mms_pref_title" msgid="1316094876978218980">"Gjej automatikisht"</string>
+    <string name="auto_retrieve_mms_pref_summary" msgid="2253902455786205335">"Gjej automatikisht mesazhe MMS"</string>
+    <string name="auto_retrieve_mms_when_roaming_pref_title" msgid="2918775628609759349">"Gjetje automatike në roaming"</string>
+    <string name="auto_retrieve_mms_when_roaming_pref_summary" msgid="7347177867673486983">"Merr automatikisht mesazhin MMS kur je në roaming"</string>
+    <string name="group_mms_pref_title" msgid="6553612309209383106">"Mesazhe në grup"</string>
+    <string name="sms_enabled_pref_title" msgid="2961457081888153323">"Aplikacioni me parazgjedhje i SMS-ve"</string>
+    <!-- no translation found for default_sms_app (3907546126124760465) -->
+    <skip />
+    <string name="mms_phone_number_pref_title" msgid="5445275222817760638">"Numri yt i telefonit"</string>
+    <string name="unknown_phone_number_pref_display_value" msgid="5191326096424554297">"E panjohur"</string>
+    <string name="send_sound_pref_title" msgid="6284747469983942370">"Tingujt e mesazheve dalëse"</string>
+    <string name="message_context_menu_copy_text" msgid="8241684826917957666">"Kopjo tekstin"</string>
+    <string name="message_context_menu_view_details" msgid="2077089491219912840">"Shiko detajet"</string>
+    <string name="message_context_menu_forward_message" msgid="4848326950037554575">"Përpara"</string>
+    <string name="message_details_title" msgid="8451487656255395372">"Detajet e mesazhit"</string>
+    <string name="message_type_label" msgid="6442873901113487978">"Shkruaj: "</string>
+    <string name="text_message" msgid="7415419755252205721">"Mesazh me tekst"</string>
+    <string name="multimedia_message" msgid="2199989099980111684">"Mesazh multimedial"</string>
+    <string name="from_label" msgid="1947831848146564875">"Nga: "</string>
+    <string name="to_address_label" msgid="1816631887533235762">"Për: "</string>
+    <string name="sent_label" msgid="5186286057597137301">"Dërguar: "</string>
+    <string name="received_label" msgid="4442494712757995203">"Marrë: "</string>
+    <string name="subject_label" msgid="1887378451808609152">"Subjekti: "</string>
+    <string name="message_size_label" msgid="8840394477993741203">"Madhësia: "</string>
+    <string name="priority_label" msgid="5029073794896222902">"Përparësia: "</string>
+    <string name="sim_label" msgid="2706003016582772108">"Karta SIM: "</string>
+    <string name="priority_high" msgid="728836357310908368">"E lartë"</string>
+    <string name="priority_normal" msgid="8918221917628753075">"Normale"</string>
+    <string name="priority_low" msgid="7398724779026801851">"E ulët"</string>
+    <string name="sim_slot_identifier" msgid="5934005977415016295">"Numri i kartës SIM: <xliff:g id="SIM_SLOT_NUMBER">%s</xliff:g>"</string>
+    <string name="hidden_sender_address" msgid="5054789216911282696">"Adresë e fshehur e dërguesit"</string>
+    <string name="cant_send_message_while_loading_attachments" msgid="4301887223941009907">"Nuk mund të dërgojë mesazh kur ngarkon bashkëngjitje."</string>
+    <string name="cant_send_message_without_active_subscription" msgid="7130532514190813716">"Rrjeti nuk është gati. Provo përsëri."</string>
+    <string name="chips_text_delete_button_content_description" msgid="123760854728616068">"Fshi tekstin"</string>
+    <string name="numeric_text_keyboard_toggle_button_content_description" msgid="1403198418131594073">"Kalo mes futjes së tekstit dhe numrave"</string>
+    <string name="add_more_participants_button_content_description" msgid="12460574490350327">"Shto më shumë pjesëmarrës"</string>
+    <string name="confrim_participants_button_content_description" msgid="7473740533133798616">"Konfirmo pjesëmarrësit"</string>
+    <string name="start_new_conversation" msgid="3924471215595992758">"Fillo bisedë të re"</string>
+    <string name="gallery_checkbox_content_description" msgid="2503122727700475428">"Përzgjidh këtë artikull"</string>
+    <string name="video_thumbnail_view_play_button_content_description" msgid="3506938388391260811">"Luaj video"</string>
+    <string name="action_people_and_options" msgid="2748020184252106661">"Kontaktet dhe opsionet"</string>
+    <string name="people_and_options_activity_title" msgid="5443749025829291736">"Kontaktet dhe opsionet"</string>
+    <string name="general_settings_title" msgid="4465312111301728995">"Të përgjithshme"</string>
+    <string name="participant_list_title" msgid="8624855187574757110">"Kontakte në këtë bisedë"</string>
+    <string name="action_call" msgid="6596167921517350362">"Bëj telefonatë"</string>
+    <string name="compose_message_view_hint_text" msgid="5214836453231753054">"Dërgo mesazh"</string>
+    <string name="compose_message_view_hint_text_multi_sim" msgid="2829154383848677160">"Dërgo mesazh&lt;br/&gt;&lt;small&gt;nga <xliff:g id="SIM_NAME">%s</xliff:g>&lt;/small&gt;"</string>
+    <plurals name="compose_message_view_hint_text_photo" formatted="false" msgid="8937589900456604618">
+      <item quantity="other">Dërgo fotografitë</item>
+      <item quantity="one">Dërgo fotografinë</item>
+    </plurals>
+    <plurals name="compose_message_view_hint_text_audio" formatted="false" msgid="5934090345811195170">
+      <item quantity="other">Dërgo audiot</item>
+      <item quantity="one">Dërgo audion</item>
+    </plurals>
+    <plurals name="compose_message_view_hint_text_video" formatted="false" msgid="9188048653766960507">
+      <item quantity="other">Dërgo videot</item>
+      <item quantity="one">Dërgo videon</item>
+    </plurals>
+    <plurals name="compose_message_view_hint_text_vcard" formatted="false" msgid="933064969858631242">
+      <item quantity="other">Dërgo kartat e kontaktit</item>
+      <item quantity="one">Dërgo kartën e kontaktit</item>
+    </plurals>
+    <plurals name="compose_message_view_hint_text_attachments" formatted="false" msgid="1778518334602418000">
+      <item quantity="other">Dërgo bashkëngjitjet</item>
+      <item quantity="one">Dërgo bashkëngjitjen</item>
+    </plurals>
+    <plurals name="attachment_changed_accessibility_announcement" formatted="false" msgid="5592871135747616108">
+      <item quantity="other"><xliff:g id="ATTACHMENT_COUNT">%d</xliff:g> bashkëngjitje gati për dërgim</item>
+      <item quantity="one">Një bashkëngjitje gati për dërgim</item>
+    </plurals>
+    <string name="menu_license" msgid="1157954180701135202">"Licenca me burim informacioni të hapur"</string>
+    <string name="notifications_enabled_conversation_pref_title" msgid="1492686092760478206">"Njoftime"</string>
+    <string name="mms_attachment_limit_reached" msgid="8303890455085643301">"U arrit kufiri i bashkëngjitjeve"</string>
+    <string name="add_contact_confirmation_dialog_title" msgid="1898307408816625598">"Shto te kontaktet?"</string>
+    <string name="add_contact_confirmation" msgid="1479380805406328264">"Shto kontakt"</string>
+    <string name="compose_message_view_subject_hint_text" msgid="6076616675845705660">"Subjekti"</string>
+    <string name="conversation_message_view_subject_text" msgid="5634274498769555505">"Subjekti: "</string>
+    <string name="notification_subject" msgid="5229975483160300625">"<xliff:g id="SUBJECT_LABEL">%1$s</xliff:g><xliff:g id="MESSAGETEXT">%2$s</xliff:g>"</string>
+    <string name="loading_vcard" msgid="3961520941271265083">"Po ngarkon kartën e kontaktit"</string>
+    <string name="failed_loading_vcard" msgid="7711070643740368402">"Nuk arriti të ngarkonte kartën e kontakteve"</string>
+    <string name="vcard_tap_hint" msgid="4940284329175200952">"Shiko kartën e kontaktit"</string>
+    <plurals name="vcard_multiple_display_name" formatted="false" msgid="2884224435488996028">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> kontakte</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> kontakt</item>
+    </plurals>
+    <string name="vcard_detail_activity_title" msgid="591540798943754991">"Kartat e kontakteve"</string>
+    <string name="vcard_detail_birthday_label" msgid="7196021537629120021">"Ditëlindje"</string>
+    <string name="vcard_detail_notes_label" msgid="6104179009509800126">"Shënime"</string>
+    <string name="forward_message_activity_title" msgid="4689730643900226699">"Transfero mesazhin"</string>
+    <string name="plus_one" msgid="9010288417554932581">"+1"</string>
+    <string name="plus_n" msgid="8961547034116059566">"+%d"</string>
+    <string name="sms_disabled" msgid="4988773371061820432">"Funksioni \"SMS\" u çaktivizua"</string>
+    <string name="requires_default_sms_app_to_send" msgid="171048611973157166">"Për të dërguar, caktoje \"Mesazhet\" si aplikacionin me parazgjedhje të SMS-ve"</string>
+    <string name="requires_default_sms_app" msgid="7477365167876194810">"Caktoje \"Mesazhet\" si aplikacionin me parazgjedhje të SMS-ve"</string>
+    <string name="requires_default_sms_change_button" msgid="6717443481161057941">"Ndrysho"</string>
+    <string name="no_preferred_sim_selected" msgid="8583927728936521140">"Nuk u përzgjodh kartë e preferuar SIM për dërgimin e mesazheve SMS"</string>
+    <string name="requires_sms_permissions_message" msgid="2179684358095980506">"Ky aplikacion nuk lejohet nga zotëruesi i pajisjes."</string>
+    <string name="requires_sms_permissions_close_button" msgid="8601569832171759435">"Në rregull!"</string>
+    <string name="too_many_participants" msgid="5857516461210932810">"Shumë pjesëmarrës në një bisedë"</string>
+    <plurals name="add_invalid_contact_error" formatted="false" msgid="782438833843363189">
+      <item quantity="other">Kontakte të pavlefshme</item>
+      <item quantity="one">Kontakt i pavlefshëm</item>
+    </plurals>
+    <string name="conversation_list_item_view_draft_message" msgid="3592923997082845035">"Draft"</string>
+    <string name="conversation_list_empty_text" msgid="7505706551294769667">"Pasi të fillosh një bisedë të re, do ta shikosh të listuar këtu"</string>
+    <string name="archived_conversation_list_empty_text" msgid="6109126963298874571">"Bisedat e arkivuara shfaqen këtu"</string>
+    <string name="conversation_list_first_sync_text" msgid="3749751291444609993">"Po ngarkon bisedat…"</string>
+    <string name="conversation_list_snippet_picture" msgid="5326960910088541826">"Fotografi"</string>
+    <string name="conversation_list_snippet_audio_clip" msgid="7894183429890407387">"Klip audioje"</string>
+    <string name="conversation_list_snippet_video" msgid="7101059507173671233">"Video"</string>
+    <string name="conversation_list_snippet_vcard" msgid="5004837959112452394">"Kartë kontakti"</string>
+    <string name="mms_text" msgid="1528791558806015806">"MMS"</string>
+    <string name="snack_bar_undo" msgid="4523395751563700308">"Zhbëj"</string>
+    <string name="snack_bar_retry" msgid="7140970704902570020">"Provo përsëri"</string>
+    <string name="contact_list_empty_text" msgid="1036353827229041942">"Fut një emër kontakti ose numër telefoni për të nisur një mesazh të ri"</string>
+    <string name="action_block" msgid="9032076625645190136">"Blloko"</string>
+    <string name="block_contact_title" msgid="6968382557194643329">"Blloko <xliff:g id="DESTINATION">%s</xliff:g>"</string>
+    <string name="unblock_contact_title" msgid="4719854710980066596">"Zhblloko <xliff:g id="DESTINATION">%s</xliff:g>"</string>
+    <string name="block_confirmation_title" msgid="8288283455512985682">"Të bllokohet <xliff:g id="DESTINATION">%s</xliff:g>?"</string>
+    <string name="block_confirmation_message" msgid="185429978461824228">"Do të vazhdosh të marrësh mesazhe nga ky numër, por nuk do të njoftohesh më. Kjo bisedë do të arkivohet."</string>
+    <string name="blocked_contacts_title" msgid="7709164518967312281">"Kontaktet e bllokuara"</string>
+    <string name="tap_to_unblock_message" msgid="1284284144816901647">"ZHBLLOKO"</string>
+    <string name="sending_message" msgid="6363584950085384929">"Po dërgon mesazhin"</string>
+    <string name="send_message_success" msgid="4088006261869323324">"Mesazhi u dërgua"</string>
+    <string name="send_message_failure_no_data" msgid="7404080465234559802">"Të dhënat celulare janë të çaktivizuara. Kontrollo cilësimet."</string>
+    <string name="send_message_failure_airplane_mode" msgid="3966519541237053840">"Nuk mund të dërgojë mesazhe në modalitetin \"në aeroplan\""</string>
+    <string name="send_message_failure" msgid="5273892629851390023">"Mesazhi nuk u arrit të dërgohej"</string>
+    <string name="download_message_success" msgid="3514921076616367225">"Mesazhi u shkarkua"</string>
+    <string name="download_message_failure_no_data" msgid="6830055949399088532">"Të dhënat celulare janë të çaktivizuara. Kontrollo cilësimet."</string>
+    <string name="download_message_failure_airplane_mode" msgid="6752478540984118382">"Nuk mund të shkarkojë mesazhe në modalitetin \"në aeroplan\""</string>
+    <string name="download_message_failure" msgid="635370887537738004">"Mesazhi nuk u arrit të shkarkohej"</string>
+    <string name="content_description_for_number_zero" msgid="7992301592202897868">"Zero"</string>
+    <string name="content_description_for_number_one" msgid="3886554185135150473">"Një"</string>
+    <string name="content_description_for_number_two" msgid="1562486479385891146">"Dy"</string>
+    <string name="content_description_for_number_three" msgid="8471442614073144385">"Tre"</string>
+    <string name="content_description_for_number_four" msgid="7515917522043407213">"Katër"</string>
+    <string name="content_description_for_number_five" msgid="8078774905490022978">"Pesë"</string>
+    <string name="content_description_for_number_six" msgid="9192012772645396654">"Gjashtë"</string>
+    <string name="content_description_for_number_seven" msgid="5870011338757220060">"Shtatë"</string>
+    <string name="content_description_for_number_eight" msgid="7078061834874737466">"Tetë"</string>
+    <string name="content_description_for_number_nine" msgid="4276787959475295232">"Nëntë"</string>
+    <string name="carrier_send_error" msgid="3796492439123251453">"Mesazhi nuk mund të dërgohet me <xliff:g id="CARRIERNAME">%1$s</xliff:g> - gabimi <xliff:g id="ERRORCODE">%2$d</xliff:g>"</string>
+    <string name="carrier_send_error_unknown_carrier" msgid="1210665032244425938">"Mesazhi nuk mund të dërgohet me një operator celular të panjohur - gabimi <xliff:g id="ERRORCODE">%1$d</xliff:g>"</string>
+    <string name="message_fwd" msgid="2144370964507743673">"Transfero: <xliff:g id="SUBJECT">%s</xliff:g>"</string>
+    <string name="mms_failure_outgoing_service" msgid="4662217039143124592">"Mesazhi nuk u dërgua - shërbimi nuk është i aktivizuar në rrjet"</string>
+    <string name="mms_failure_outgoing_address" msgid="6212773250215580849">"Mesazhi nuk u dërgua - adresë e pavlefshme vendmbërritje"</string>
+    <string name="mms_failure_outgoing_corrupt" msgid="6132734324976690436">"Mesazhi nuk u dërgua - mesazh i pavlefshëm"</string>
+    <string name="mms_failure_outgoing_content" msgid="919220273446626565">"Mesazhi nuk u dërgua - përmbajtje e pambështetur"</string>
+    <string name="mms_failure_outgoing_unsupported" msgid="2614377585077448979">"Mesazhi nuk u dërgua - mesazh i pambështetur"</string>
+    <string name="mms_failure_outgoing_too_large" msgid="3917966922000717407">"Mesazhi nuk u dërgua: shumë i madh"</string>
+    <string name="in_conversation_notify_new_message_text" msgid="8207541514656839042">"Mesazh i ri"</string>
+    <string name="in_conversation_notify_new_message_action" msgid="7311780674392006753">"Shiko"</string>
+    <string name="message_image_content_description" msgid="621604138442762130">"Imazh"</string>
+    <string name="activity_not_found_message" msgid="2355153262520375529">"Nuk arriti të gjente një aplikacion të përshtatshëm"</string>
+    <string name="chips_delete_content_description" msgid="4655699207140895492">"Hiq marrësin"</string>
+    <string name="share_new_message" msgid="2135955613694195483">"Mesazh i ri"</string>
+    <string name="share_cancel" msgid="6666929391961668469">"Anulo"</string>
+    <string name="copy_to_clipboard_dialog_title" msgid="494269163973708182">"Të kopjohet në kujtesën e fragmenteve"</string>
+    <string name="copy_to_clipboard" msgid="1977083934277981786">"Kopjo"</string>
+    <string name="incoming_sim_name_text" msgid="4244076415705614525">"për <xliff:g id="SIM_NAME">%s</xliff:g>"</string>
+    <string name="general_settings" msgid="5409336577057897710">"Të përgjithshme"</string>
+    <string name="advanced_settings" msgid="5870459931510000742">"Të përparuara"</string>
+    <string name="general_settings_activity_title" msgid="3012187932521771578">"Cilësimet e përgjithshme"</string>
+    <string name="advanced_settings_activity_title" msgid="7397017836928206201">"Cilësimet e përparuara"</string>
+    <string name="sim_specific_settings" msgid="948779178668552448">"Emri i kartës SIM: \"<xliff:g id="SIM_NAME">%s</xliff:g>\""</string>
+    <string name="disable_group_mms" msgid="1016285369211000297">"Dërgoju mesazhe SMS të gjithë marrësve. Vetëm ti do të marrësh përgjigje"</string>
+    <string name="enable_group_mms" msgid="4311733160940564593">"Dërgoju një MMS të vetme, të gjithë marrësve"</string>
+    <string name="sim_settings_unknown_number" msgid="1885996389432991383">"Numër i panjohur"</string>
+    <string name="secondary_user_new_message_title" msgid="201938947573987596">"Mesazh i ri."</string>
+    <string name="secondary_user_new_message_ticker" msgid="2386669280323553032">"Mesazh i ri."</string>
+    <string name="sim_selector_button_content_description" msgid="2407660715957787727">"Përzgjedhësi i kartës SIM"</string>
+    <string name="sim_selector_button_content_description_with_selection" msgid="4042539046779910617">"<xliff:g id="SIM_0">%1$s</xliff:g> i përzgjedhur, përzgjedhësi i kartës SIM"</string>
+    <string name="send_button_long_click_description_no_sim_selector" msgid="979624100711380593">"Redakto subjektin"</string>
+    <string name="send_button_long_click_description_with_sim_selector" msgid="7670274457707760465">"Përzgjidh kartën SIM ose redakto subjektin"</string>
+    <string name="audio_record_view_content_description" msgid="29401157183728655">"Prek dhe mbaj shtypur për të regjistruar audio"</string>
+    <string name="widget_new_conversation_content_description" msgid="4214201569175733579">"Fillo bisedë të re"</string>
+    <string name="widget_title_content_description" msgid="5802836840910466231">"Mesazhet"</string>
+    <string name="widget_conversation_name" msgid="3900606239571892871">"Mesazhet"</string>
+    <string name="widget_conversation_list_content_description" msgid="4137121313374868821">"Lista e bisedave"</string>
+    <string name="loading_conversations" msgid="2890879017729068514">"Po ngarkon bisedat"</string>
+    <string name="loading_messages" msgid="3894765818932489665">"Po ngarkon mesazhet"</string>
+    <string name="view_more_conversations" msgid="2430542054023217740">"Shiko më shumë biseda"</string>
+    <string name="view_more_messages" msgid="6463224009407336178">"Shiko më shumë mesazhe"</string>
+    <string name="conversation_deleted" msgid="6088388615460305424">"Biseda është fshirë"</string>
+    <string name="tap_to_configure" msgid="7591682335533041774">"Biseda u fshi. Prek për të shfaqur një bisedë tjetër te \"Mesazhet\""</string>
+    <string name="update_destination_blocked" msgid="4577227174205233981">"I bllokuar"</string>
+    <string name="update_destination_unblocked" msgid="5369499874676600478">"I zhbllokuar"</string>
+    <string name="db_full" msgid="8459265782521418031">"Hapësira ruajtëse është e vogël. Disa të dhëna mund të humbin."</string>
+    <string name="attachment_chooser_activity_title" msgid="4049093653421684774">"Përzgjidh bashkëngjitje"</string>
+    <string name="action_confirm_selection" msgid="3787494008738625806">"Konfirmo përzgjedhjen"</string>
+    <string name="attachment_chooser_selection" msgid="3616821885478549778">"U përzgjodhën <xliff:g id="COUNT">%d</xliff:g>"</string>
+    <string name="attachment_limit_reached_dialog_message_when_composing" msgid="2983376679583030373">"Hiq një ose më shumë bashkëngjitje dhe provo sërish."</string>
+    <string name="attachment_limit_reached_dialog_message_when_sending" msgid="3917529855170816197">"Mund të provosh ta dërgosh mesazhin, por mund të mos dërgohet pa hequr një ose disa bashkëngjitje."</string>
+    <string name="video_attachment_limit_exceeded_when_sending" msgid="8545536951461996462">"Mund të dërgosh vetëm një video për çdo mesazh. Hiqi videot shtesë dhe provo përsëri."</string>
+    <string name="attachment_load_failed_dialog_message" msgid="4917927407363303333">"Mesazhet dështuan në ngarkimin e bashkëngjitjes."</string>
+    <string name="attachment_limit_reached_send_anyway" msgid="2348790618093735551">"Dërgoje gjithsesi"</string>
+    <string name="conversation_creation_failure" msgid="8597624563218724441">"Nuk arriti të fillonte bisedën"</string>
+    <string name="selected_sim_content_message" msgid="4504796674843354505">"<xliff:g id="SELECTED_SIM">%s</xliff:g> u zgjodh"</string>
+</resources>

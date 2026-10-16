@@ -1,0 +1,357 @@
+/*
+ * Copyright (C) 2015 The Android Open Source Project
+ * Copyright (C) 2024 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package android.support.v7.mms;
+
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Process;
+import android.telephony.SmsManager;
+import android.util.Log;
+
+import androidx.core.content.IntentCompat;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
+
+/**
+ * Service to execute MMS requests using deprecated legacy APIs on older platform (prior to L)
+ */
+public class MmsService extends Service {
+    static final String TAG = "MmsLib";
+
+    //The default number of threads allowed to run MMS requests
+    private static final int DEFAULT_THREAD_POOL_SIZE = 4;
+    // Delay before stopping the service
+    private static final int SERVICE_STOP_DELAY_MILLIS = 2000;
+
+    private static final String EXTRA_REQUEST = "request";
+    private static final String EXTRA_MYPID = "mypid";
+
+    /**
+     * Thread pool size for each request queue
+     */
+    private static volatile int sThreadPoolSize = DEFAULT_THREAD_POOL_SIZE;
+
+    /**
+     * Carrier configuration values loader
+     */
+    private static volatile CarrierConfigValuesLoader sCarrierConfigValuesLoader = null;
+
+    /**
+     * APN loader
+     */
+    private static volatile ApnSettingsLoader sApnSettingsLoader = null;
+
+    /**
+     * UserAgent and UA Prof URL loader
+     */
+    private static volatile UserAgentInfoLoader sUserAgentInfoLoader = null;
+
+    /**
+     * Set the optional carrier config values
+     *
+     * @param loader the carrier config values loader
+     */
+    static void setCarrierConfigValuesLoader(final CarrierConfigValuesLoader loader) {
+        sCarrierConfigValuesLoader = loader;
+    }
+
+    /**
+     * Get the current carrier config values loader
+     *
+     * @return the carrier config values loader currently set
+     */
+    static CarrierConfigValuesLoader getCarrierConfigValuesLoader() {
+        return sCarrierConfigValuesLoader;
+    }
+
+    /**
+     * Set APN settings loader
+     *
+     * @param loader the APN settings loader
+     */
+    static void setApnSettingsLoader(final ApnSettingsLoader loader) {
+        sApnSettingsLoader = loader;
+    }
+
+    /**
+     * Get the current APN settings loader
+     *
+     * @return the APN settings loader currently set
+     */
+    static ApnSettingsLoader getApnSettingsLoader() {
+        return sApnSettingsLoader;
+    }
+
+    /**
+     * Set user agent info loader
+     *
+     * @param loader the user agent info loader
+     */
+    static void setUserAgentInfoLoader(final UserAgentInfoLoader loader) {
+        sUserAgentInfoLoader = loader;
+    }
+
+    /**
+     * Get the current user agent info loader
+     *
+     * @return the user agent info loader currently set
+     */
+    static UserAgentInfoLoader getUserAgentInfoLoader() {
+        return sUserAgentInfoLoader;
+    }
+
+    /**
+     * Make sure loaders are not null. Set to default if that's the case
+     *
+     * @param context the Context to use
+     */
+    private static void ensureLoaders(final Context context) {
+        if (sUserAgentInfoLoader == null) {
+            sUserAgentInfoLoader = new DefaultUserAgentInfoLoader(context);
+        }
+        if (sCarrierConfigValuesLoader == null) {
+            sCarrierConfigValuesLoader = new DefaultCarrierConfigValuesLoader(context);
+        }
+        if (sApnSettingsLoader == null) {
+            sApnSettingsLoader = new DefaultApnSettingsLoader(context);
+        }
+    }
+
+    // Remember my PID to discard restarted intent
+    private static volatile int sMyPid = -1;
+
+    /**
+     * Get the current PID
+     *
+     * @return the current PID
+     */
+    private static int getMyPid() {
+        if (sMyPid < 0) {
+            sMyPid = Process.myPid();
+        }
+        return sMyPid;
+    }
+
+    /**
+     * Check if the intent is coming from this process
+     *
+     * @param intent the incoming intent for the service
+     * @return true if the intent is from the current process
+     */
+    private static boolean fromThisProcess(final Intent intent) {
+        final int pid = intent.getIntExtra(EXTRA_MYPID, -1);
+        return pid == getMyPid();
+    }
+
+    // Request execution thread pools. One thread pool for sending and one for downloading.
+    // The size of the thread pool controls the parallelism of request execution.
+    // See {@link setThreadPoolSize}
+    private final ExecutorService[] mExecutors = new ExecutorService[2];
+
+    // Active request count
+    private int mActiveRequestCount;
+    // The latest intent startId, used for safely stopping service
+    private int mLastStartId;
+
+    private MmsNetworkManager mNetworkManager;
+
+    // Handler for scheduling service stop
+    private final Handler mHandler = new Handler();
+    // Service stop task
+    private final Runnable mServiceStopRunnable = this::tryStopService;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        ensureLoaders(this);
+
+        for (int i = 0; i < mExecutors.length; i++) {
+            mExecutors[i] = Executors.newFixedThreadPool(sThreadPoolSize);
+        }
+
+        mNetworkManager = new MmsNetworkManager(this);
+
+        synchronized (this) {
+            mActiveRequestCount = 0;
+            mLastStartId = -1;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        for (ExecutorService executor : mExecutors) {
+            executor.shutdown();
+        }
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        // Always remember the latest startId for use when we try releasing the service
+        synchronized (this) {
+            mLastStartId = startId;
+        }
+        boolean scheduled = false;
+        if (intent != null) {
+            // There is a rare situation that right after a intent is started,
+            // the service gets killed. Then the service will restart with
+            // the old intent which we don't want it to run since it will
+            // break our assumption for wake lock. Check the process ID
+            // embedded in the intent to make sure it is indeed from the
+            // the current life of this service.
+            if (fromThisProcess(intent)) {
+                final MmsRequest request = IntentCompat.getParcelableExtra(intent, EXTRA_REQUEST,
+                        MmsRequest.class);
+                if (request != null) {
+                    try {
+                        retainService(request, () -> {
+                            try {
+                                request.execute(
+                                        MmsService.this,
+                                        mNetworkManager,
+                                        getApnSettingsLoader(),
+                                        getCarrierConfigValuesLoader(),
+                                        getUserAgentInfoLoader());
+                            } catch (Exception e) {
+                                Log.w(TAG, "Unexpected execution failure", e);
+                            } finally {
+                                releaseService();
+                            }
+                        });
+                        scheduled = true;
+                    } catch (RejectedExecutionException e) {
+                        // Rare thing happened. Send back failure using the pending intent
+                        // and also release the wake lock.
+                        Log.w(TAG, "Executing request failed " + e);
+                        request.returnResult(this, SmsManager.MMS_ERROR_UNSPECIFIED,
+                                null/*response*/, 0/*httpStatusCode*/);
+                    }
+                } else {
+                    Log.w(TAG, "Empty request");
+                }
+            } else {
+                Log.w(TAG, "Got a restarted intent from previous incarnation");
+            }
+        } else {
+            Log.w(TAG, "Empty intent");
+        }
+        if (!scheduled) {
+            // If the request is not started successfully, we need to try shutdown the service
+            // if nobody is using it.
+            tryScheduleStop();
+        }
+        return START_NOT_STICKY;
+    }
+
+    /**
+     * Retain the service for executing the request in service thread pool
+     *
+     * @param request The request to execute
+     * @param runnable The runnable to run the request in thread pool
+     */
+    private void retainService(final MmsRequest request, final Runnable runnable) {
+        final ExecutorService executor = getRequestExecutor(request);
+        synchronized (this) {
+            executor.execute(runnable);
+            mActiveRequestCount++;
+        }
+    }
+
+    /**
+     * Release the service from the request. If nobody is using it, schedule service stop.
+     */
+    private void releaseService() {
+        synchronized (this) {
+            mActiveRequestCount--;
+            if (mActiveRequestCount <= 0) {
+                mActiveRequestCount = 0;
+                rescheduleServiceStop();
+            }
+        }
+    }
+
+    /**
+     * Schedule the service stop if there is no active request
+     */
+    private void tryScheduleStop() {
+        synchronized (this) {
+            if (mActiveRequestCount == 0) {
+                rescheduleServiceStop();
+            }
+        }
+    }
+
+    /**
+     * Reschedule service stop task
+     */
+    private void rescheduleServiceStop() {
+        mHandler.removeCallbacks(mServiceStopRunnable);
+        mHandler.postDelayed(mServiceStopRunnable, SERVICE_STOP_DELAY_MILLIS);
+    }
+
+    /**
+     * Really try to stop the service if there is not active request
+     */
+    private void tryStopService() {
+        Boolean stopped = null;
+        synchronized (this) {
+            if (mActiveRequestCount == 0) {
+                stopped = stopSelfResult(mLastStartId);
+            }
+        }
+        logServiceStop(stopped);
+    }
+
+    /**
+     * Log the result of service stopping. Also check wake lock status when service stops.
+     *
+     * @param stopped Not empty if service stop is performed: true if really stopped, false
+     *                if cancelled.
+     */
+    private void logServiceStop(final Boolean stopped) {
+        if (stopped != null) {
+            if (stopped) {
+                Log.i(TAG, "Service successfully stopped");
+            } else {
+                Log.i(TAG, "Service stopping cancelled");
+            }
+        }
+    }
+
+    private ExecutorService getRequestExecutor(final MmsRequest request) {
+        if (request instanceof SendRequest) {
+            // Send
+            return mExecutors[0];
+        } else {
+            // Download
+            return mExecutors[1];
+        }
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+}
